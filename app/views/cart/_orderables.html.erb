@@ -1,0 +1,66 @@
+  <div style="display:flex;justify-content:space-between;margin: 1em 1em;">
+
+<% @cart.orderables.each do |orderable| %>
+ <ul class="menu">
+ <div class = "product_cart">
+  <% product = orderable.product %>
+  </div>
+  <div id="<%= "cart-#{product.id}" %>">
+ <div style="display:flex;justify-content:space-between;margin: 2em 1em;">
+ <ul>
+  <tr>
+
+  <div class = "show_img_cart"> 
+    
+    <%= image_tag (product.image), alt: 'fun' %>
+  
+</div>
+
+
+
+<div class = nameandprice>
+<div>
+   
+      <strong>
+      <%= product.name %>
+      </strong>
+
+</div>
+  <div>
+      <strong>Price:</strong>
+      <%= product.price %>
+</div>
+  </div>
+
+ 
+  </ul>
+
+  <ul>
+  <div>
+  <div>
+      <%= form_with(url: cart_add_path) do |f| %>
+        <%= f.hidden_field :id, value: product.id %>
+        <%= f.number_field :quantity, value: orderable.quantity, min: 0 %>
+        <%= f.submit "Update Cart" %>
+      <% end %>
+      </div>
+
+      <div class = "delete">
+      <%= form_with(url: cart_remove_path) do |f| %>
+        <%= f.hidden_field :id, value: orderable.id %>
+        <%= f.submit "Delete" %>
+      <% end %>
+       </div>
+
+         <div class = "total">
+      <strong>Total in this product:</strong>
+      <%= orderable.total %>
+        </div>
+    </div>
+  </div>
+  </div>
+
+<% end %>
+
+</div>
+</div>

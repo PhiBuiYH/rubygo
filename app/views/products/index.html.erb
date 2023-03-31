@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<div class = row>
+<div class = "col-6">
+
+<h1>Our Products</h1>
+
+<div id="products">
+<div class = "renderproduct">
+  <% @products.each do |product| %>
+
+  <div class = "each_product">
+    <%= render product %>
+ </div>
+      <%# <%= link_to "Show this product", product %> 
+  
+  <% end %>
+</div>
+</div>
+<%= link_to "New product", new_product_path %>
+</div>
+
+
+<div class = "col-6 col-md-6">
+<%= render partial: "cart/cart" if @render_cart %>
+</div>
+</div>

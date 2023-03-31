@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body {
+    background-color: #FFFFFF;
+}
+h1 {
+    background-color: #F6C90E;
+}
+
+h2
+{
+  background-color: #F6C90E;
+}
+
+p {
+    background-color: #777777
+}
+
+img {
+    display: block;
+    max-width:250px;
+    max-height:220px;
+    width: 200px;
+    height: 200px;
+    
+  }
+
+
+
+  .menu{
+    margin: 0px;
+    padding: 0px;
+    background: #FFFFFF;
+}
+
+.menu_cart{
+    margin: 0px;
+    padding: 0px;
+    background: #FFFFFF;
+}
+
+
+.each_product{
+    width: 600px;
+    border: 10px solid #777777;
+    padding: 20px;
+    margin: 10px;
+    
+  }
+  .product_incart{
+    width: 80x;
+    border: 1px solid #777777;
+    padding: 1px;
+    margin: 1px;
+    
+  }
+  .product_cart{
+    width: 80x;
+    border: 1px solid #777777;
+    padding: 1px;
+    margin: 1px;
+    
+  }
+
+
+.show_img{
+    width: 250px;
+    border: 2px solid #777777;
+    padding: 5px;
+    margin: 2px;
+    background-color: #DDDDDD
+  }
+
+  .show_img_cart{
+    border-radius: 50%;
+    width: 220px;
+    border: 2px solid #777777;
+    padding: 5px;
+    margin: 2px;
+    background-color: #DDDDDD
+  }
+
+  .renderproduct{
+    width: 80x;
+    border: 1px solid #777777;
+    padding: 1px;
+    margin: 1px;
+    
+  }
+
+
+  .addsptocart{
+    width: 80x;
+    border: 1px solid green;
+    padding: 1px;
+    margin: 1px;
+    background-color: #66FFCC
+    
+  }

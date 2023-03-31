@@ -1,0 +1,45 @@
+<div id="<%= dom_id product %>">
+  <div style="display:flex;justify-content:space-between;margin: 0em 5em;">
+  <ul class="menu">
+
+<div class = "show_img">
+    <%= image_tag (product.image), alt: 'fun' %>
+   </div>
+
+   <div>
+   
+    <strong>
+    <%= product.name %>
+    </strong>
+</div>
+
+ <div>
+ <i>
+    <%= product.description %>
+    </i>
+    </div>
+       
+ 
+  
+    <strong>$:
+    <%= product.price %>
+     </strong>
+        <p>
+      
+    <%= form_with(url: cart_add_path) do |f| %>
+      <%= f.hidden_field :id, value: product.id %>
+      <%= f.number_field :quantity, value: 0, min: 1 %>
+
+
+       <% if @cart.orderables.map(&:product_id).include?(product.id)  %>
+       <div class = "addsptocart">
+     <span>The product has been added to cart </span>
+     </div>
+      <% else %>
+      <%= f.submit "Add To Cart" %>
+       <% end %>
+    <% end %>
+      </p>
+  </div>
+</div>
+</ul>

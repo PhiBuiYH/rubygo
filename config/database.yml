@@ -1,0 +1,41 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  username: <%= ENV.fetch('RAILS_APP_DATABASE_USER', 'postgres') %>
+  password: <%= ENV.fetch('RAILS_APP_DATABASE_PASSWORD', 'postgres') %>
+  host: <%= ENV.fetch('DATABASE_HOSTNAME', 'localhost') %>
+  database: <%= ENV.fetch('RAILS_APP_DATABASE_NAME', 'rubyGo') %>
+  port : <%= ENV.fetch('RAILS_APP_PORT', 5432) %>
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+ 
+
+  # username: <%= ENV['DB_USERNAME'] %>
+  # password: <%= ENV['DB_PASSWORD'] %>
+  # host: <%= ENV['DB_HOST'] %>
+  # port: <%= ENV['DB_PORT'] %>
+
+  username: <%= ENV.fetch('RAILS_APP_DATABASE_USER', 'postgres') %>
+  password: <%= ENV.fetch('RAILS_APP_DATABASE_PASSWORD', 'postgres') %>
+  host: <%= ENV.fetch('DATABASE_HOSTNAME', 'localhost') %>
+  database: <%= ENV.fetch('RAILS_APP_DATABASE_NAME', 'rubyGo_test') %>
+  port : <%= ENV.fetch('RAILS_APP_PORT', 5432) %>
+
+production:
+  <<: *default
+  database: rubyGo_production
+  username: <%= ENV.fetch('RAILS_APP_DATABASE_USER', 'postgres') %>
+  password: <%= ENV.fetch('RAILS_APP_DATABASE_PASSWORD', 'postgres') %>
+  host: <%= ENV.fetch('DATABASE_HOSTNAME', 'localhost') %>
+  port : <%= ENV.fetch('RAILS_APP_PORT', 5432) %>
+  

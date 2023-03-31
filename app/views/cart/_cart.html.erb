@@ -1,0 +1,14 @@
+<html>
+<%= turbo_frame_tag "cart" do %>
+  <h1>Your Cart       $:<%= @cart.total %></h1>
+  <% if @cart.orderables.count > 0 %>
+  <div class = product_incart>
+    <%= render "cart/orderables" %>
+    </div>
+   
+  <% else %>
+    <h2>Your cart is empty</h2>
+  <% end %>
+<% end %>
+</html>
+
